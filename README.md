@@ -1,4 +1,4 @@
-# Générateur de sous-titres avec Whisper et FFmpeg (Windows)
+# Générateur de sous-titres offline/local avec Whisper et FFmpeg (Windows/Linux)
 
 Ce dépôt contient un guide complet et des scripts batch/python pour générer automatiquement un fichier de sous-titres à partir de vidéos .mp4, grâce à FFmpeg et OpenAI Whisper.
 
