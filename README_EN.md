@@ -237,7 +237,7 @@ pause
 ### Batch script preview
 
 <p align="center">
-  <img src="docs/screenshot_script.PNG" alt="Execution Script" width="800">
+  <img src="screenshots/screenshot_script.PNG" alt="Execution Script" width="800">
 </p>
 
 ---
@@ -291,7 +291,7 @@ Available options:
 ### Python script preview
 
 <p align="center">
-  <img src="docs/screenshot_scriptpython.PNG" alt="Execution Script" width="800">
+  <img src="screenshots/screenshot_scriptpython.PNG" alt="Execution Script" width="800">
 </p>
 
 ---
