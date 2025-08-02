@@ -191,7 +191,7 @@ Aperçus du script :
 
 | Script en cours d’exécution | 
 |-----------------------------|
-| ![Execution Script](docs/screenshot_script.png) |
+| ![Execution Script](docs/screenshot_script.PNG) |
 
 
 ---
