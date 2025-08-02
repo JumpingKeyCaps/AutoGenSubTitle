@@ -10,6 +10,7 @@ Ce repo contient un guide complet et un script `.bat` pour générer automatique
 - Python 3.9+ (avec pip)
 - FFmpeg (build essentials)
 - Connexion internet (pour l’installation des dépendances Whisper)
+- Whisper repo (via pip call)
 
 ---
 
