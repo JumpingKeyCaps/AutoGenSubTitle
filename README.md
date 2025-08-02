@@ -78,6 +78,15 @@ pip install ffmpeg-python
 pip install rich pyfiglet
 ```
 
+## 💡 Astuce rapide d’utilisation
+
+Pour simplifier le workflow, placez **FFmpeg**, votre vidéo `.mp4` et le script (`.bat` ou `.py`) dans un même dossier.  
+- Pour le script batch : il suffit de **glisser-déposer votre vidéo sur le fichier `.bat`**.  
+- Pour le script Python : ouvrez ce dossier dans l’Explorateur, cliquez sur la barre d’adresse, tapez `cmd` puis appuyez sur Entrée pour ouvrir une console déjà positionnée dans ce dossier. Il ne reste plus qu’à taper la commande Python pour lancer le script, par exemple :  
+```bash
+python gen_subs.py ma_video.mp4
+```
+
 ## 2. Utilisation
 
 ### 2.1 Commandes séparées
