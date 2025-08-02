@@ -10,10 +10,13 @@ Whisper peut transcrire l'audio de votre vidéo dans sa langue d'origine. De plu
 Whisper (en version open-source) s’exécute **100% en local** sur votre machine.  
 Aucune donnée audio ou vidéo n’est envoyée à OpenAI ou à un serveur externe : la transcription et la traduction sont effectuées directement sur votre **CPU** ou votre **GPU**.
 
-**Avantages :**
+**Avantages :**  
 - **Gratuit et illimité** – pas de quotas ni coûts cachés  
 - **Confidentiel** – vos fichiers restent privés  
-- **Rapidité** – fortement accélérée si vous disposez d’un GPU compatible (CUDA/ROCm)  
+- **Rapidité** – Whisper détecte automatiquement votre matériel et utilise le GPU si disponible (CUDA/ROCm).  
+  - Si votre GPU prend en charge le FP16, l’exécution est encore plus rapide et économe en mémoire.  
+  - Si FP16 n’est pas supporté, il passe automatiquement en FP32.  
+  - En l’absence de GPU compatible, il bascule automatiquement sur le CPU.  
 - **Hors-ligne** – fonctionne même sans connexion internet une fois installé  
 
   ℹ️ Les modèles Whisper sont téléchargés automatiquement lors de la première utilisation, puis mis en cache pour les exécutions suivantes.
