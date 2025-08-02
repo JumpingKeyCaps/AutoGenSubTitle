@@ -1,6 +1,6 @@
 @echo off
 if "%~1"=="" (
-  echo Glisse ta video dessus pour generer les sous-titres.
+  echo Glisse ta video dessus pour generer les sous-titres en anglais.
   pause
   exit /b
 )
