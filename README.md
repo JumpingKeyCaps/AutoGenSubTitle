@@ -1,6 +1,7 @@
 # Générateur de sous-titres avec Whisper et FFmpeg (Windows)
 
-Ce repo contient un guide complet et un script `.bat` pour générer automatiquement des sous-titres traduits en français à partir de vidéos `.mp4`, grâce à FFmpeg et OpenAI Whisper.
+Ce repo contient un guide complet et un script `.bat` pour générer automatiquement un fichier de sous-titres en anglais à partir de vidéos `.mp4`, grâce à FFmpeg et OpenAI Whisper.  
+⚠️ La traduction vers le français ou une autre langue doit être faite séparément.
 
 ---
 
@@ -10,9 +11,10 @@ Ce repo contient un guide complet et un script `.bat` pour générer automatique
 - Python 3.9+ (avec pip)
 - FFmpeg (build essentials)
 - Connexion internet (pour l’installation des dépendances Whisper)
-- Whisper repo (via pip call)
+- Whisper installé via `pip`
 
 ---
+
 
 ## 1. Installation
 
@@ -48,8 +50,8 @@ ffmpeg -i mavideo.mp4 -ar 16000 -ac 1 -c:a pcm_s16le audio.wav
 # 2. Transcrire en anglais
 whisper audio.wav --model small --language en
 
-# 3. Transcrire + traduire en français
-whisper audio.wav --model small --language en --task translate
+# 3. Transcrire + traduire en anglais (video en francais)
+whisper audio.wav --model small --language fr --task translate
 
 ```
 
@@ -71,8 +73,8 @@ set "basename=%~n1"
 echo Extraction audio...
 ffmpeg -i "%video%" -ar 16000 -ac 1 -c:a pcm_s16le "%basename%.wav"
 
-echo Transcription + traduction en francais...
-whisper "%basename%.wav" --model tiny --task translate --language en
+echo Transcription en anglais...
+whisper "%basename%.wav" --model tiny --language en
 
 echo Nettoyage du fichier audio temporaire...
 del "%basename%.wav"
@@ -102,7 +104,7 @@ pause
   - Ici `--language en` indique que l’audio est en anglais.
   - Changez-le si la vidéo est dans une autre langue (ex: `--language fr`).
 - **Traduction** :
-  - `--task translate` traduit automatiquement **de l’anglais vers le français**.
+  - `--task translate` traduit automatiquement **vers l'anglais**.
   - Pour traduire vers une autre langue, transcrivez d’abord (`--task transcribe`), puis utilisez un traducteur externe.
 - Le script supprime le `.wav` temporaire après génération du `.srt` pour garder le dossier propre.
 
