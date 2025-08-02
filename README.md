@@ -3,7 +3,7 @@
 Ce dépôt contient un guide complet et un script .bat pour générer automatiquement un fichier de sous-titres à partir de vidéos .mp4, grâce à FFmpeg et OpenAI Whisper.
 
 Whisper peut transcrire l'audio de votre vidéo dans sa langue d'origine. De plus, il offre la possibilité (optionnelle) de traduire cette transcription en anglais.
----> [https://github.com/openai/whisper](Whisper)
+---> [Whisper sur GitHub](https://github.com/openai/whisper)
 
 ⚠️ Si vous choisissez l'option de traduction, notez que la traduction du texte obtenu vers le français ou toute autre langue autre que l'anglais devra être effectuée séparément, car ***Whisper ne prend en charge la traduction que vers l'anglais.***
 
@@ -16,7 +16,7 @@ Whisper peut transcrire l'audio de votre vidéo dans sa langue d'origine. De plu
 - FFmpeg (build essentials)
 - Connexion internet (pour l’installation des dépendances Whisper)
 - Whisper installé via `pip`
-- pip install rich pyfiglet (python script only)
+- Rich / Pyfiglet (python script only)
 
 ---
 
@@ -42,6 +42,7 @@ Ouvrez un terminal (cmd ou PowerShell) et lancez :
 python -m pip install --upgrade pip
 pip install git+https://github.com/openai/whisper.git
 pip install ffmpeg-python
+pip install rich pyfiglet
 ```
 
 ## 2. Utilisation
