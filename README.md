@@ -242,7 +242,7 @@ pause
 ### Aperçus du script batch
 
 <p align="center">
-  <img src="docs/screenshot_script.PNG" alt="Execution Script" width="800">
+  <img src="screenshots/screenshot_script.PNG" alt="Execution Script" width="800">
 </p>
 
 
@@ -301,7 +301,7 @@ Options disponibles :
 ### Aperçus du script Python
 
 <p align="center">
-  <img src="docs/screenshot_scriptpython.PNG" alt="Execution Script" width="800">
+  <img src="screenshots/screenshot_scriptpython.PNG" alt="Execution Script" width="800">
 </p>
 
 
