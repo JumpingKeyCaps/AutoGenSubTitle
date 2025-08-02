@@ -2,19 +2,28 @@
 setlocal enabledelayedexpansion
 
 :: --- Configuration des couleurs pour un look console ---
-color 0E
+title AutoGenSubTitles
+color 60
 cls
 
-:: --- En-tête de bienvenue  ---
+:: --- En-tête de bienvenue (Style ASCII simple) ---
 echo.
-echo  #################################################################
-echo  #        G E N E R A T E U R   D E   S O U S - T I T R E S      #
-echo  #             A V E C   W H I S P E R / F F M P E G             #
-echo  #################################################################
+echo.
+echo        db    88   88 888888  dP"Yb   dP""b8 888888 88b 88       
+echo       dPYb   88   88   88   dP   Yb dP   `" 88__   88Yb88       
+echo      dP__Yb  Y8   8P   88   Yb   dP Yb  "88 88""   88 Y88       
+echo     dP""""Yb `YbodP'   88    YbodP   YboodP 888888 88  Y8    
+echo.   
+echo   .dP"Y8 88   88 88""Yb 888888 88 888888 88     888888 .dP"Y8 
+echo   `Ybo." 88   88 88__dP   88   88   88   88     88__   `Ybo." 
+echo   o.`Y8b Y8   8P 88""Yb   88   88   88   88  .o 88""   o.`Y8b 
+echo   8bodP' `YbodP' 88oodP   88   88   88   88ood8 888888 8bodP'       
+echo.  
+echo.
+echo  -----------------------------------------------------------------                                            
 echo.
 echo   [ INFO ] Glissez-deposez une video (.mp4) sur ce script pour demarrer.
 echo.
-echo  -----------------------------------------------------------------
 echo.
 
 if "%~1"=="" (
@@ -49,14 +58,14 @@ if errorlevel 1 (
 )
 echo   [ OK ] Whisper est bien installe.
 echo.
-
+echo.
 echo  -----------------------------------------------------------------
 echo   [ VIDEO ] Informations sur la video :
 echo  -----------------------------------------------------------------
 echo   Video cible : "%video%"
 echo   Nom de base : "%basename%"
 echo.
-
+echo.
 :: --- Choix de la langue source ---
 echo  -----------------------------------------------------------------
 echo   [ ETAPE 1/4 ] Selection de la langue de l'audio source
