@@ -1,11 +1,33 @@
 # Générateur de sous-titres avec Whisper et FFmpeg (Windows)
 
-Ce dépôt contient un guide complet et un script .bat pour générer automatiquement un fichier de sous-titres à partir de vidéos .mp4, grâce à FFmpeg et OpenAI Whisper.
+Ce dépôt contient un guide complet et des scripts batch/python pour générer automatiquement un fichier de sous-titres à partir de vidéos .mp4, grâce à FFmpeg et OpenAI Whisper.
 
 Whisper peut transcrire l'audio de votre vidéo dans sa langue d'origine. De plus, il offre la possibilité (optionnelle) de traduire cette transcription en anglais.
 ---> [Whisper sur GitHub](https://github.com/openai/whisper)
 
-⚠️ Si vous choisissez l'option de traduction, notez que la traduction du texte obtenu vers le français ou toute autre langue autre que l'anglais devra être effectuée séparément, car ***Whisper ne prend en charge la traduction que vers l'anglais.***
+### 💡 À savoir : Whisper fonctionne en local
+
+Whisper (en version open-source) s’exécute **100% en local** sur votre machine.  
+Aucune donnée audio ou vidéo n’est envoyée à OpenAI ou à un serveur externe : la transcription et la traduction sont effectuées directement sur votre **CPU** ou votre **GPU**.
+
+**Avantages :**
+- **Gratuit et illimité** – pas de quotas ni coûts cachés  
+- **Confidentiel** – vos fichiers restent privés  
+- **Rapidité** – fortement accélérée si vous disposez d’un GPU compatible (CUDA/ROCm)  
+- **Hors-ligne** – fonctionne même sans connexion internet une fois installé  
+
+  ℹ️ Les modèles Whisper sont téléchargés automatiquement lors de la première utilisation, puis mis en cache pour les exécutions suivantes.
+
+
+### ⚠️ **Limitation de Whisper sur la traduction**  
+
+En mode traduction (`--task translate`), Whisper convertit **toujours** la transcription **vers l’anglais**, quelle que soit la langue source.  
+Il n’existe pas d’option intégrée pour traduire directement vers le français ou une autre langue.
+
+Si vous souhaitez obtenir vos sous-titres dans une autre langue, la méthode recommandée est :  
+1. **Transcrire uniquement** (`--task transcribe`) pour obtenir un fichier `.srt` dans la langue d’origine.  
+2. Utiliser un outil externe pour traduire ce `.srt` vers la langue voulue.  
+   - Exemple en ligne : [https://translate-subtitles.com/](https://translate-subtitles.com/)
 
 ---
 
