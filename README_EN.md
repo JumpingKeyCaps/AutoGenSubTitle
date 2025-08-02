@@ -76,14 +76,7 @@ pip install git+https://github.com/openai/whisper.git
 pip install ffmpeg-python
 pip install rich pyfiglet
 ```
-## 💡 Quick usage tip
 
-To simplify the workflow, place **FFmpeg**, your `.mp4` video, and the script (`.bat` or `.py`) in the same folder.  
-- For the batch script: just **drag and drop your video onto the `.bat` file**.  
-- For the Python script: open this folder in Explorer, click the address bar, type `cmd` and press Enter to open a console already positioned there. Then just run the Python command to launch the script, for example:  
-```bash
-python gen_subs.py my_video.mp4
-```
 ## 2. Usage
 
 ### 2.1 Separate commands
@@ -98,95 +91,32 @@ whisper audio.wav --model small --language en
 # 3. Transcribe + translate to English (e.g., French video, English subtitles)
 whisper audio.wav --model small --language fr --task translate
 ```
+## 💡 Quick usage tip
+
+To simplify the workflow, place **FFmpeg**, your `.mp4` video, and the script (`.bat` or `.py`) in the same folder.  
+- For the batch script: just **drag and drop your video onto the `.bat` file**.  
+- For the Python script: open this folder in Explorer, click the address bar, type `cmd` and press Enter to open a console already positioned there.
+-  Then just run the Python command to launch the script, for example:
+  
+```bash
+python gen_subs.py my_video.mp4
+```
+
+
 
 ### 2.2 Automatic `.bat` script (drag and drop)
 
 Place this `gen_subs.bat` file in the same folder as `ffmpeg.exe` and your `.mp4` videos.  
 Drag and drop a video onto it: the script will extract audio, run Whisper to transcribe and translate, then delete the temporary audio.
 
-```bat
-@echo off
-setlocal enabledelayedexpansion
+### Batch script preview
 
-if "%~1"=="" (
-  echo [!] Drag a video here to generate subtitles.
-  pause
-  exit /b
-)
+<p align="center">
+  <img src="screenshots/screenshot_script.PNG" alt="Execution Script" width="800">
+</p>
 
-set "video=%~1"
-set "basename=%~n1"
+---
 
-REM --- check tools ---
-if not exist ffmpeg.exe (
-  where ffmpeg >nul 2>&1 || (
-    echo [!] ffmpeg not found. Put ffmpeg.exe in this folder or add it to PATH.
-    pause
-    exit /b
-  )
-)
-where whisper >nul 2>&1
-if errorlevel 1 (
-  echo [!] whisper not found. Make sure Whisper is installed and the "whisper" command is on PATH.
-  pause
-  exit /b
-)
-
-echo -------------------------------------------------------
-echo Target video : "%video%"
-echo Base name    : "%basename%"
-echo -------------------------------------------------------
-
-REM --- source language ---
-set "lang_arg="
-set /p inlang=Source audio language (e.g., en, fr, es) [auto] : 
-if not "%inlang%"=="" (
-  set "lang_arg=--language %inlang%"
-  echo [*] Forced language : %inlang%
-) else (
-  echo [*] Auto-detection enabled.
-)
-
-REM --- choice transcription vs English translation ---
-echo.
-echo Translate to English (regardless of source language)?
-choice /M "Translate to English?"
-if errorlevel 2 (
-  set "task_arg="
-  echo [*] Mode: transcription only.
-) else (
-  set "task_arg=--task translate"
-  echo [*] Mode: translation to English.
-)
-
-echo.
-echo [1/3] Extracting audio...
-ffmpeg -hide_banner -loglevel error -i "%video%" -ar 16000 -ac 1 -c:a pcm_s16le "%basename%.wav"
-if errorlevel 1 (
-  echo [!] Audio extraction failed.
-  pause
-  exit /b
-)
-
-echo.
-echo [2/3] Running Whisper...
-whisper "%basename%.wav" --model tiny %lang_arg% %task_arg%
-if errorlevel 1 (
-  echo [!] Whisper failed. The .srt may be incomplete or missing.
-) else (
-  echo [*] Whisper completed.
-)
-
-echo.
-echo [3/3] Cleaning up...
-if exist "%basename%.wav" del "%basename%.wav" >nul 2>&1
-
-echo.
-echo -------------------------------------------------------
-echo Generated subtitles: "%basename%.srt"
-echo -------------------------------------------------------
-pause
-```
 ### 2.3 Output
 - Several types of files are generated in the same folder as the video, including:
 
@@ -221,6 +151,15 @@ pause
   - `--task translate` automatically translates **to English**.
   - To translate to another language, transcribe first (`--task transcribe`), then use an external translation tool.
 - The script deletes the temporary `.wav` after `.srt` generation to keep the folder clean.
+ 
+### Performance and Time Estimation
+
+- Running on full CPU with an Intel Xeon 5690 (very old) using single-precision floating point (F32) and the Whisper Tiny model, the complete processing of a *42-minute video took about 17 minutes* to generate the `.srt` file.
+
+- This corresponds to roughly `40%` of the video's actual duration, meaning the script runs at just under half of real-time speed.
+
+- Performance may vary depending on CPU/GPU power, the Whisper model size used, and the video length.  
+On newer machines or with a compatible GPU, significantly faster processing times can be expected.
 
 ---
 
@@ -234,21 +173,13 @@ pause
 
 ---
 
-### Batch script preview
 
-<p align="center">
-  <img src="screenshots/screenshot_script.PNG" alt="Execution Script" width="800">
-</p>
-
----
 
 ## 5. Interactive Python script (gen_subs.py)
 
 - In addition to the `.bat` script, this repository includes a more advanced, interactive Python version with Rich and PyFiglet integration.
 
 This version:
-
- - Displays a retro ASCII banner and colorful tables.
 
  - Automatically checks for ffmpeg and whisper in the PATH.
 
