@@ -229,21 +229,29 @@ Cette version :
 
 ### Utilisation
 
-```python gen_subs.py ma_video.mp4```
+- ```
+  python gen_subs.py ma_video.mp4
+  ```
+  Le script vous posera ensuite les questions nécessaires.
 
-Le script vous posera ensuite les questions nécessaires.
+
 
 Vous pouvez aussi tout préciser en ligne de commande :
-
-```python gen_subs.py ma_video.mp4 --model small --language fr --translate-to-en```
+- ```
+  python gen_subs.py ma_video.mp4 --model small --language fr --translate-to-en
+  ```
 
 Options disponibles :
 
-`--model`            Taille du modèle Whisper (tiny, base, small, medium, large)
-`--language, -l `    Code ISO de la langue source (ex: fr, en) – vide = autodétection
-`--translate-to-en`  Traduire automatiquement vers l'anglais
-`--no-clean`         Conserver le fichier .wav temporaire
-`--log `             Fichier où enregistrer le rapport d’exécution
+  ` --model`            Taille du modèle Whisper (tiny, base, small, medium, large)
+  
+  ` --language, -l `    Code ISO de la langue source (ex: fr, en) – vide = autodétection
+  
+  ` --translate-to-en`  Traduire automatiquement vers l'anglais
+  
+  ` --no-clean`         Conserver le fichier .wav temporaire
+  
+  ` --log `             Fichier où enregistrer le rapport d’exécution
 
 ---
 
