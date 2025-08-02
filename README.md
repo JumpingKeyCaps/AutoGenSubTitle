@@ -189,8 +189,6 @@ Sur des machines plus récentes ou avec un GPU compatible, on peut espérer des 
 
 Cette version :
 
- - Affiche une bannière ASCII rétro et des tableaux colorés.
-
  - Vérifie automatiquement la présence de ffmpeg et whisper dans le PATH.
 
  - Propose un mode interactif pour choisir :
