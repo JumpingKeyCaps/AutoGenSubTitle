@@ -149,11 +149,23 @@ pause
 
 ```
 ### 2.3 Résultat
+- Plusieurs types de fichiers sont générés dans le même dossier que la vidéo, incluant :
 
-- Un fichier `.srt` est généré dans le même dossier que la vidéo.
-- Si le fichier `.srt` porte exactement le même nom que la vidéo (`ma_video.mp4` et `ma_video.srt`), VLC l’affichera automatiquement.
-- Sinon, vous pouvez charger manuellement le fichier depuis VLC :  
-  **Menu** → *Sous-titres* → *Ajouter un fichier de sous-titres…*
+  `.srt` (SubRip) : Le format de sous-titres le plus courant, compatible avec la plupart des lecteurs vidéo (comme VLC).
+
+  `.json` (JavaScript Object Notation) : Un format structuré pour les données, utile pour l'intégration dans des applications.
+
+  `.txt` (texte brut) : Une simple transcription du texte.
+
+  `.tsv` (Tab Separated Values) : Un format de tableau simple, séparé par des tabulations.
+
+  `.vtt` (WebVTT) : Un autre format de sous-titres, souvent utilisé pour le web.
+
+- Pour la lecture vidéo :
+
+  - Si le fichier .srt porte exactement le même nom que la vidéo (par exemple, ma_video.mp4 et ma_video.srt), VLC Media Player le chargera automatiquement.
+
+  - Sinon, vous pouvez charger manuellement le fichier .srt depuis VLC via : Menu → Sous-titres → Ajouter un fichier de sous-titres…
 
 ---
 
