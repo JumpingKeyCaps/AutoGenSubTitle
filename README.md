@@ -185,6 +185,17 @@ pause
 
 ---
 
+## 📸 Screenshots
+
+Aperçus du script :
+
+| Script en cours d’exécution | 
+|-----------------------------|
+| ![Execution Script](docs/screenshot_script.png) |
+
+
+---
+
 ## 4. Exemple d’usage rapide
 
 1. Glissez `ma_video.mp4` sur `gen_subs.bat`.
