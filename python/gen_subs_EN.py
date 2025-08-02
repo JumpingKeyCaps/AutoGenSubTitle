@@ -284,7 +284,7 @@ def main():
                 TextColumn("[progress.description]{task.description}"),
                 BarColumn(),
                 TimeElapsedColumn(),
-                transient=False,
+                transient=true,
             ) as progress:
                 t1 = progress.add_task("Extracting audio...", total=1)
                 try:
