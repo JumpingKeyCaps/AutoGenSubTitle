@@ -16,6 +16,7 @@ Whisper peut transcrire l'audio de votre vidéo dans sa langue d'origine. De plu
 - FFmpeg (build essentials)
 - Connexion internet (pour l’installation des dépendances Whisper)
 - Whisper installé via `pip`
+- pip install rich pyfiglet (python script only)
 
 ---
 
@@ -185,9 +186,17 @@ pause
 
 ---
 
-## 📸 Screenshots
+## 4. Exemple d’usage rapide
 
-Aperçus du script :
+1. Glissez `ma_video.mp4` sur `gen_subs.bat`.
+2. Attendez que le script ait terminé l’extraction audio, la transcription et la traduction.
+3. Ouvrez `ma_video.mp4` dans VLC.  
+   - Si le `.srt` a le même nom que la vidéo, il se chargera automatiquement.
+   - Sinon, ajoutez-le via le menu des sous-titres.
+  
+---
+
+Aperçus du script batch:
 
 | Script en cours d’exécution | 
 |-----------------------------|
@@ -196,10 +205,55 @@ Aperçus du script :
 
 ---
 
-## 4. Exemple d’usage rapide
 
-1. Glissez `ma_video.mp4` sur `gen_subs.bat`.
-2. Attendez que le script ait terminé l’extraction audio, la transcription et la traduction.
-3. Ouvrez `ma_video.mp4` dans VLC.  
-   - Si le `.srt` a le même nom que la vidéo, il se chargera automatiquement.
-   - Sinon, ajoutez-le via le menu des sous-titres.
+
+## 5. Script Python interactif (gen_subs.py)
+
+- En plus du script .bat, ce dépôt inclut une version Python plus évoluée, interactive et visuellement enrichie grâce à Rich et PyFiglet.
+
+Cette version :
+
+ - Affiche une bannière ASCII rétro et des tableaux colorés.
+
+ - Vérifie automatiquement la présence de ffmpeg et whisper dans le PATH.
+
+ - Propose un mode interactif pour choisir :
+
+    - Le modèle Whisper (tiny, base, small, medium, large)
+
+    - La langue source (ou autodétection)
+
+    - La traduction vers l’anglais (oui/non)
+
+- Fournit un récapitulatif complet et la langue détectée.
+
+### Utilisation
+
+```python gen_subs.py ma_video.mp4```
+
+Le script vous posera ensuite les questions nécessaires.
+
+Vous pouvez aussi tout préciser en ligne de commande :
+
+```python gen_subs.py ma_video.mp4 --model small --language fr --translate-to-en```
+
+Options disponibles :
+
+`--model`            Taille du modèle Whisper (tiny, base, small, medium, large)
+`--language, -l `    Code ISO de la langue source (ex: fr, en) – vide = autodétection
+`--translate-to-en`  Traduire automatiquement vers l'anglais
+`--no-clean`         Conserver le fichier .wav temporaire
+`--log `             Fichier où enregistrer le rapport d’exécution
+
+---
+
+Aperçus du script python :
+
+| Script en cours d’exécution | 
+|-----------------------------|
+| ![Execution Script](docs/screenshot_scriptpython.PNG) |
+
+
+---
+
+
