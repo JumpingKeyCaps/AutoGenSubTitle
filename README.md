@@ -1,5 +1,13 @@
 # Générateur de sous-titres offline/local avec Whisper et FFmpeg (Windows/Linux)
 
+[![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)](https://www.python.org/)
+[![FFmpeg](https://img.shields.io/badge/FFmpeg-required-brightgreen?logo=ffmpeg)](https://ffmpeg.org/)
+[![Whisper](https://img.shields.io/badge/OpenAI-Whisper-blueviolet?logo=openai)](https://github.com/openai/whisper)
+[![Platform](https://img.shields.io/badge/OS-Windows%20%7C%20Linux-lightgrey?logo=windows)](#)
+[![Offline](https://img.shields.io/badge/Mode-100%25%20Local-success)](#)
+[![GPU Support](https://img.shields.io/badge/GPU-CUDA%20%7C%20ROCm-yellow?logo=nvidia)](#)
+[![Made With](https://img.shields.io/badge/Made%20with-Rich%20%26%20PyFiglet-ff69b4)](#)
+
 Ce dépôt contient un guide complet et des scripts batch/python pour générer automatiquement un fichier de sous-titres à partir de vidéos .mp4, grâce à FFmpeg et OpenAI Whisper.
 
 Whisper peut transcrire l'audio de votre vidéo dans sa langue d'origine. De plus, il offre la possibilité (optionnelle) de traduire cette transcription en anglais.
@@ -222,11 +230,11 @@ pause
   
 ---
 
-Aperçus du script batch:
+### Aperçus du script batch
 
-| Script en cours d’exécution | 
-|-----------------------------|
-| ![Execution Script](docs/screenshot_script.PNG) |
+<p align="center">
+  <img src="docs/screenshot_script.PNG" alt="Execution Script" width="800">
+</p>
 
 
 ---
@@ -281,13 +289,44 @@ Options disponibles :
 
 ---
 
-Aperçus du script python :
+### Aperçus du script Python
 
-| Script en cours d’exécution | 
-|-----------------------------|
-| ![Execution Script](docs/screenshot_scriptpython.PNG) |
+<p align="center">
+  <img src="docs/screenshot_scriptpython.PNG" alt="Execution Script" width="800">
+</p>
 
 
 ---
 
+## 🚀 Roadmap – Évolutions prévues
 
+Voici les prochaines étapes envisagées pour améliorer et enrichir ce projet :
+
+- **Création d’un exécutable standalone**  
+  Générer une version exécutable (.exe pour Windows, binaire pour Linux) afin de simplifier l’utilisation, sans avoir besoin d’installer Python ni les dépendances manuellement.
+
+- **Interface graphique (GUI)**  
+  Développer une interface utilisateur en Python (par exemple avec `Tkinter`, `PyQt` ou `customtkinter`) pour rendre l’outil accessible aux utilisateurs non familiers avec la ligne de commande.
+
+- **Traduction multilingue intégrée**  
+  Utiliser Whisper uniquement pour la transcription, puis intégrer une librairie de traduction (ex : `deep-translator`, API gratuites ou locales) pour permettre la traduction directe vers **n’importe quelle langue**.
+
+- **Traitement par lot (batch)**  
+  Ajouter la possibilité de traiter automatiquement **plusieurs vidéos à la suite**, avec la même configuration.
+
+- **Optimisation pour les vidéos longues**  
+  Implémenter un **découpage en chunks** (segments) des vidéos longues pour éviter la saturation mémoire et accélérer le traitement, avec **fusion automatique** des sous-titres à la fin.
+
+- **Optimisations de performance**  
+  - Support des modèles Whisper compressés ou quantifiés pour réduire l’empreinte RAM et accélérer l’exécution.  
+  - Meilleure gestion CPU/GPU avec bascule automatique selon la configuration détectée (FP16 / FP32, CUDA/ROCm, fallback CPU).  
+
+- **Formats supplémentaires**  
+  Support direct pour d’autres formats vidéo et audio (MKV, AVI, FLAC, etc.) et export vers plus de formats de sous-titres.
+
+---
+
+<p align="center">
+   Développé avec ❤️ pour un usage personnel<br>
+   Basé sur <a href="https://github.com/openai/whisper">OpenAI Whisper</a> et <a href="https://ffmpeg.org/">FFmpeg</a>.<br>
+</p>
