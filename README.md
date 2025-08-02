@@ -1,7 +1,11 @@
 # Générateur de sous-titres avec Whisper et FFmpeg (Windows)
 
-Ce repo contient un guide complet et un script `.bat` pour générer automatiquement un fichier de sous-titres en anglais à partir de vidéos `.mp4`, grâce à FFmpeg et OpenAI Whisper.  
-⚠️ La traduction vers le français ou une autre langue doit être faite séparément.
+Ce dépôt contient un guide complet et un script .bat pour générer automatiquement un fichier de sous-titres à partir de vidéos .mp4, grâce à FFmpeg et OpenAI Whisper.
+
+Whisper peut transcrire l'audio de votre vidéo dans sa langue d'origine. De plus, il offre la possibilité (optionnelle) de traduire cette transcription en anglais.
+---> [https://github.com/openai/whisper](Whisper)
+
+⚠️ Si vous choisissez l'option de traduction, notez que la traduction du texte obtenu vers le français ou toute autre langue autre que l'anglais devra être effectuée séparément, car ***Whisper ne prend en charge la traduction que vers l'anglais.***
 
 ---
 
