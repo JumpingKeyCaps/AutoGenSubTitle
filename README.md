@@ -112,7 +112,7 @@ Drag and drop a video onto it: the script will extract audio, run Whisper to tra
 ### Batch script preview
 
 <p align="center">
-  <img src="screenshots/screenshot_script.PNG" alt="Execution Script" width="800">
+  <img src="screenshots/screenshot_script2.PNG" alt="Execution Script" width="800">
 </p>
 
 ---
