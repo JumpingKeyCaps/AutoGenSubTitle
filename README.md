@@ -222,7 +222,7 @@ Available options:
 ### Python script preview
 
 <p align="center">
-  <img src="screenshots/screenshot_scriptpython.PNG" alt="Execution Script" width="800">
+  <img src="screenshots/screenshot_scriptpython2.PNG" alt="Execution Script" width="800">
 </p>
 
 ---
